@@ -1,93 +1,124 @@
 # ReminderTool
-ReminderTool is a simple desktop application built with PyQt5 that allows you to set up daily notifications. The app runs in the background after system startup, and you can access it from the system tray.
-Features
 
-    Daily Notifications: Set notifications with a title, message, time, and specific days.
-    System Tray: The app runs in the background and can be accessed from the system tray.
-    Startup on Boot: The program starts automatically when Windows boots.
-    Add, Edit, and Delete Notifications: Manage notifications easily through the user interface.
-    Data Persistence: Notifications are saved to a file and loaded automatically on startup.
+**ReminderTool** is a simple desktop application built with PyQt5 that allows you to set up daily notifications. The app runs in the background after system startup, and you can access it from the system tray.
 
-Installation
-Requirements
+## Features
 
-    Python 3.6+
-    PyQt5
-    plyer (for notifications)
-    pywin32 (for Windows startup functionality)
+- **Daily Notifications**: Set notifications with a title, message, time, and specific days.
+- **System Tray**: The app runs in the background and can be accessed from the system tray.
+- **Startup on Boot**: The program starts automatically when Windows boots.
+- **Add, Edit, and Delete Notifications**: Manage notifications easily through the user interface.
+- **Data Persistence**: Notifications are saved to a file and loaded automatically on startup.
 
-Setup Instructions
+## Installation
 
-    Clone the repository or download the code:
+### Requirements
 
-    bash
+- Python 3.6+
+- PyQt5
+- plyer (for notifications)
+- pywin32 (for Windows startup functionality)
 
-git clone https://github.com/yourusername/ReminderTool.git
-cd ReminderTool
+### Setup Instructions
 
-Install the required Python packages: Use pip to install the necessary dependencies:
+1. **Clone the repository** or download the code:
 
-bash
+    ```bash
+    git clone https://github.com/HighOrc/ReminderTool.git
+    cd ReminderTool
+    ```
 
-pip install -r requirements.txt
+2. **Install the required Python packages**:
 
-If you don’t have a requirements.txt file, you can install dependencies individually:
+    Use pip to install the necessary dependencies:
 
-bash
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-pip install pyqt5 plyer pywin32
+    If you don’t have a `requirements.txt` file, you can install dependencies individually:
 
-Run the Application: To run the application, use the following command:
+    ```bash
+    pip install pyqt5 plyer pywin32
+    ```
 
-bash
+3. **Run the Application**:
 
+    To run the application, use the following command:
+
+    ```bash
     python main.py
+    ```
 
-    Adding to Startup: The program automatically adds itself to the Windows startup folder, so it runs when your computer starts up.
+4. **Adding to Startup**:
 
-Usage
+    The program automatically adds itself to the Windows startup folder, so it runs when your computer starts up.
 
-    Running the Program:
-        The program will start minimized in the system tray when launched.
-        Right-click the tray icon to open the program or exit.
+## Usage
 
-    Adding a Notification:
-        Enter a notification title, message, and select the time and days.
-        Click the "Add Notification" button to schedule the notification.
-        The notification will pop up at the selected time on the chosen days.
+1. **Running the Program**:
 
-    Editing/Deleting Notifications:
-        Select an existing notification from the table, then use the "Update Notification" or "Delete Notification" buttons to edit or remove it.
+    - The program will start minimized in the system tray when launched.
+    - Right-click the tray icon to open the program or exit.
 
-    Exiting the Application:
-        Right-click on the system tray icon and select "Exit" to close the program.
+2. **Adding a Notification**:
 
-Customization
+    - Enter a notification title, message, and select the time and days.
+    - Click the **Add Notification** button to schedule the notification.
+    - The notification will pop up at the selected time on the chosen days.
 
-    Changing the Icon:
-        Replace the icon.png file in the root directory with your desired icon image.
-        Make sure the file path in main.py is updated accordingly:
+3. **Editing/Deleting Notifications**:
 
-        python
+    - Select an existing notification from the table, then use the **Update Notification** or **Delete Notification** buttons to edit or remove it.
 
-        self.tray_icon.setIcon(QIcon("path/to/your/icon.png"))
+4. **Exiting the Application**:
 
-    Customizing Notification Sounds:
-        The application currently uses the default system sound for notifications. To customize, modify the notification.notify() call in notification_manager.py and use a custom sound file.
+    - Right-click on the system tray icon and select **Exit** to close the program.
 
-Known Issues
+## Customization
 
-    No Icon Displayed: If the tray icon doesn't appear, make sure you have an appropriate .png file for the icon and it's in the correct path.
-    Application Not Running on Startup: Ensure that the pywin32 library is installed and functioning correctly. If startup is not working, manually check if the shortcut is placed in the startup folder (shell:startup).
+### Changing the Icon
 
-Contributing
+Replace the `icon.png` file in the root directory with your desired icon image. Make sure the file path in `main.py` is updated accordingly:
 
-    Fork the repository.
-    Create a new branch for your feature (git checkout -b feature-name).
-    Commit your changes (git commit -m 'Add some feature').
-    Push to the branch (git push origin feature-name).
-    Open a pull request.
+```python
+self.tray_icon.setIcon(QIcon("path/to/your/icon.png"))
+```
 
-License
+### Customizing Notification Sounds
+
+The application currently uses the default system sound for notifications. To customize, modify the `notification.notify()` call in `notification_manager.py` and use a custom sound file.
+
+## Known Issues
+
+- **No Icon Displayed**: If the tray icon doesn't appear, make sure you have an appropriate `.png` file for the icon and it's in the correct path.
+- **Application Not Running on Startup**: Ensure that the `pywin32` library is installed and functioning correctly. If startup is not working, manually check if the shortcut is placed in the startup folder (`shell:startup`).
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch for your feature:
+
+    ```bash
+    git checkout -b feature-name
+    ```
+
+3. Commit your changes:
+
+    ```bash
+    git commit -m 'Add some feature'
+    ```
+
+4. Push to the branch:
+
+    ```bash
+    git push origin feature-name
+    ```
+
+5. Open a pull request.
+
+## License
 
 This project is licensed under the MIT License.
+
+---
